@@ -1,0 +1,39 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>SchoolProyect</title>
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+    <link rel="stylesheet" href="{% static 'css/content.css' %}">
+</head>
+<body>
+
+    <header>
+        <nav>
+            <div class="HeaderBG">
+                <h1 id ="SchoolName">Escuela Normal Superior</h1>
+                <h1 id ="UserName">Juan Andres Rodriguez</h1>
+                <img id="Logo" src="{% static 'img/circle-user-round.svg' %}" alt="Logo">
+                <div class="SubHeaderBG">
+                    <div class ="Pages">
+                        <a href="{% url 'index' %}"><h2>Inicio</h2></a> 
+                        <h2>Materias</h2>
+                        <a href="{% url 'schedule' %}"><h2>Horario</h2></a>                  
+                        <h2>Instrucciones</h2>
+                        
+                        <div class="UnderLine"></div>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    {% block content %}
+    {% endblock %}
+
+ 
+
+    <script src="{% static 'js/script.js' %}"></script>
+</body>
+</html>
