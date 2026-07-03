@@ -13,7 +13,11 @@
         <nav>
             <div class="HeaderBG">
                 <h1 id ="SchoolName">Escuela Normal Superior</h1>
-                <h1 id ="UserName">Juan Andres Rodriguez</h1>
+                <div class="LoginButtonBG">
+                    <div class="LoginButton">
+                        <a href="{% url 'login' %}"><h2>Login</h2></a>
+                    </div>
+                </div>
                 <img id="Logo" src="{% static 'img/circle-user-round.svg' %}" alt="Logo">
                 <div class="SubHeaderBG">
                     <div class ="Pages">

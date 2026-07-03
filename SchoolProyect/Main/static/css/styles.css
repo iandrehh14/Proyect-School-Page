@@ -38,15 +38,35 @@ html{
     align-self: center;
 }
 
-.HeaderBG #UserName {
-    color: #e8e8e8;
-    font-size: 35px;
-    font-weight: 700;
+.LoginButtonBG {
+    background-color: #668eb9;
+    width: 150px;
+    height: 60px;
     position: absolute;
-    top: 35px;
+    top: 30px;
     right: 160px;
+    border-radius: 15px;
 }
 
+.LoginButton {
+    background-color: #2e2e2e;
+    width: 95%;
+    height: 90%;
+    display: grid;
+    position: absolute;
+    top: 5%;
+    left: 2.5%;
+    border-radius: 15px;    
+}
+
+.LoginButton h2 {
+    color: #e8e8e8;
+    font-size: 30px;
+    font-weight: 500;
+    position: absolute;
+    top: 5%;;
+    left: 23%;
+}   
 .HeaderBG #Logo {
     width: 100px;
     height: 100px;

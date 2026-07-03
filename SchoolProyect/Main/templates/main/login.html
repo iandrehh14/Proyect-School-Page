@@ -1,0 +1,27 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>SchoolProyect</title>
+    <link rel="stylesheet" href="{% static 'css/login.css' %}">
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="LoginBG">
+                <div class =LoginCardBG>
+                    <div class="LoginCard">
+                        <h1 id="SchoolName">Escuela Normal Superior</h1>
+
+                        <form method="post" action="{% url 'login' %}">
+                            {% csrf_token %}
+                            <input type="text" id="EmailTxt" name="username" placeholder="Correo Electrónico" required>
+                            <input type="password" id="PasswordTxt" name="password" placeholder="Contraseña" required>
+                            <button type="submit" id="LoginBtn">Iniciar Sesión</button>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+</body>
