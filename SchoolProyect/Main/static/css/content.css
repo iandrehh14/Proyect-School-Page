@@ -21,11 +21,23 @@ html{
     font-family: "Inter", "Segoe UI", sans-serif;
 }
 
+body{
+    background:#141414;
+}
+
+/*==================================================
+    CONTENEDOR
+==================================================*/
 
 .ContentBG {
     width: 100%;
     min-height: 100vh;
-    background-color: #1a1a1a;
+
+    background:
+        radial-gradient(circle at 15% 10%, rgba(108,152,204,0.09), transparent 42%),
+        radial-gradient(circle at 85% 90%, rgba(108,152,204,0.06), transparent 45%),
+        #171717;
+
     border-radius: 5px;
 
     display: grid;
@@ -38,67 +50,98 @@ html{
     align-items: start;
 }
 
-
-
 .NewsSection,
 .RightColumn {
     display: flex;
     flex-direction: column;
     gap: 20px;
 }
+
+/*==================================================
+    ENCABEZADO
+==================================================*/
+
 #WelcomeText {
-    color: #e8e8e8;
+    color: #F2F2F2;
     font-size: 32px;
-    font-weight: 500;
+    font-weight: 600;
+    letter-spacing: .2px;
 }
 
 #DateText {
-    color: #b4b4b4;
+    color: #8A8A8A;
     font-size: 18px;
     font-weight: 400;
     margin-top: -10px;
 }
 
 #NewsText {
-    color: #b4b4b4;
+    color: #9C9C9C;
     font-size: 20px;
-    font-weight: 600;
+    font-weight: 700;
     letter-spacing: 0.08em;
     text-transform: uppercase;
     margin-top: 20px;
 }
 
+/*==================================================
+    TARJETA DE NOTICIA / MENSAJE
+==================================================*/
+
 .CardNewsBG {
     width: 100%;
-    background-color: #2e2e2e;
+
+    background:linear-gradient(180deg,#2C2C2C 0%,#222222 100%);
+    border:1px solid rgba(255,255,255,.05);
     border-radius: 20px;
+
+    box-shadow:
+        0 18px 40px rgba(0,0,0,.35),
+        0 0 0 1px rgba(255,255,255,.02) inset;
 
     min-height: 40vh; 
     padding: 20px;
 
     position: relative; 
+    overflow: hidden;
+}
+
+.CardNewsBG::before{
+    content:"";
+    position:absolute;
+    top:-60px;
+    right:-60px;
+    width:220px;
+    height:220px;
+    border-radius:50%;
+    background:radial-gradient(circle,rgba(108,152,204,.10),transparent 70%);
+    pointer-events:none;
 }
 
 .CardNewsBG #AccountLogo {
     width: 60px;
     height: 60px;
     margin-top: 2px;
+
+    border-radius: 50%;
+    border: 2px solid rgba(108,152,204,.45);
+    box-shadow: 0 6px 16px rgba(0,0,0,.35);
+    object-fit: cover;
 }
 
 .CardNewsBG #TeacherUserName {
     margin-left: 70px;
     margin-top: -60px;
 
-    color: #e8e8e8;
+    color: #F2F2F2;
     font-size: 22px;
-    font-weight: 500;
+    font-weight: 600;
 }
 
 .CardNewsBG #TeacherSubject {
     margin-left: 70px;
-    
 
-    color: #b4b4b4;
+    color: #8F8F8F;
     font-size: 17px;
     font-weight: 400;
 }
@@ -107,9 +150,8 @@ html{
     position: absolute;
     top: 30px;
     right: 20px;
-    
 
-    color: #b4b4b4;
+    color: #8A8A8A;
     font-size: 17px;
 }
 
@@ -118,7 +160,9 @@ html{
 
     width: 120px;
     height: 30px;
-    background-color: #1e4268;
+
+    background:linear-gradient(135deg,#274668,#1A3350);
+    border:1px solid rgba(108,152,204,.35);
     border-radius: 10px;
 }
 
@@ -126,31 +170,32 @@ html{
     margin-left: 15px;
     padding-top: 4px;
 
-
-    color: #81b1e7;
+    color: #8CBBFF;
     font-size: 16px;
-    font-weight: 500;
+    font-weight: 600;
 }
 
 .CardNewsBG #TitleMessageText {
     margin-top: 15px;
 
-    color: #e8e8e8;
+    color: #F2F2F2;
     font-size: 28px;
-    font-weight: 500;
+    font-weight: 600;
     width: 70%;
 }
 
 .CardNewsBG #ContentMessageText {
     margin-top: 10px;
 
-    color: #b4b4b4;
+    color: #A6A6A6;
     font-size: 20px;
     line-height: 1.7;
     width: 70%;
 }
 
-
+/*==================================================
+    COLUMNA DERECHA
+==================================================*/
 
 .RightColumn {
     display: flex;
@@ -158,16 +203,23 @@ html{
     gap: 20px;
 }
 
-
 .CardScheduleBG,
 .CardNoticesBG {
     width: 100%;
-    background-color: #2e2e2e;
+
+    background:linear-gradient(180deg,#2C2C2C 0%,#222222 100%);
+    border:1px solid rgba(255,255,255,.05);
     border-radius: 20px;
+
+    box-shadow: 0 18px 40px rgba(0,0,0,.35);
+
     padding: 30px;
     margin-left: 50px;
 }
 
+/*==================================================
+    HORARIO
+==================================================*/
 
 .ScheduleHeader {
     display: flex;
@@ -175,18 +227,17 @@ html{
     gap: 12px;
     margin-bottom: 24px;
     padding-bottom: 24px;
-    border-bottom: 1px solid #3a3a3a;
+    border-bottom: 1px solid rgba(255,255,255,.08);
 }
 
 #ScheduleTitle,
 #NoticesTitle {
-    color: #9a9a9a;
+    color: #A0A0A0;
     font-size: 20px;
-    font-weight: 600;
+    font-weight: 700;
     letter-spacing: 0.08em;
     text-transform: uppercase;
 }
-
 
 .ScheduleList {
     display: flex;
@@ -198,7 +249,14 @@ html{
     justify-content: space-between;
     align-items: center;
     padding: 20px 0;
-    border-bottom: 1px solid #3a3a3a;
+    border-bottom: 1px solid rgba(255,255,255,.08);
+
+    transition:.2s ease;
+}
+
+.ScheduleItem:hover{
+    padding-left: 6px;
+    border-bottom-color: rgba(108,152,204,.35);
 }
 
 .ScheduleItem:last-child {
@@ -206,24 +264,27 @@ html{
 }
 
 .ScheduleSubject {
-    color: #e8e8e8;
+    color: #EDEDED;
     font-size: 22px;
-    font-weight: 500;
+    font-weight: 600;
 }
 
 .ScheduleRoom {
-    color: #9a9a9a;
+    color: #9A9A9A;
     font-size: 17px;
     font-weight: 400;
     margin-top: 6px;
 }
 
 .ScheduleTime {
-    color: #9a9a9a;
+    color: #7FA8DA;
     font-size: 18px;
-    font-weight: 400;
+    font-weight: 600;
 }
 
+/*==================================================
+    AVISOS
+==================================================*/
 
 .NoticesList {
     display: flex;
@@ -241,23 +302,34 @@ html{
     width: 10px;
     height: 10px;
     border-radius: 50%;
-    background-color: #4a90d9;
+
+    background:#6C98CC;
+    box-shadow: 0 0 0 4px rgba(108,152,204,.15);
+
     margin-top: 9px;
     flex-shrink: 0;
 }
 
 .NoticeText {
-    color: #b4b4b4;
+    color: #ABABAB;
     font-size: 18px;
     font-weight: 400;
     line-height: 1.7;
 }
 
+/*==================================================
+    CONTENIDO EMBEBIDO
+==================================================*/
+
 .GeniallyContainer{
     margin-top: 70px;
     width: 100%;
     height: 900px;
+
     border-radius: 20px;
+    border:1px solid rgba(255,255,255,.05);
+    box-shadow: 0 18px 40px rgba(0,0,0,.35);
+
     overflow: hidden;
 }
 

@@ -21,68 +21,122 @@ html{
     font-family: "Inter", "Segoe UI", sans-serif;
 }
 
+/*==================================================
+    HEADER
+==================================================*/
+
 .HeaderBG {
     width: 100%;
     height: 125px;
-    background-color: #1e1e1e;
+
+    background:linear-gradient(180deg,#212121 0%,#1A1A1A 100%);
+    border-bottom:1px solid rgba(255,255,255,.05);
+
     display: grid;
     border-radius: 5px;
+
+    position:relative;
+    z-index:2;
+
+    box-shadow: 0 10px 25px rgba(0,0,0,.30);
 }
 
 .HeaderBG #SchoolName {
-    color: #e8e8e8;
+    color: #F2F2F2;
     font-size: 42px;
     font-weight: 700;
+    letter-spacing:.2px;
+
+    font-family:Cambria, Georgia, serif;
+
     margin-left: 20px;
     margin-top: -15px;
     align-self: center;
 }
 
+/*==================================================
+    BOTON DE SESION
+==================================================*/
+
 .LoginButtonBG {
-    background-color: #668eb9;
+    background:linear-gradient(150deg,#7FA8DA,#4A6E9E);
+
     width: 150px;
     height: 60px;
+
     position: absolute;
     top: 30px;
     right: 160px;
+
     border-radius: 15px;
+
+    box-shadow: 0 10px 22px rgba(90,143,209,.28);
 }
 
 .LoginButton {
-    background-color: #2e2e2e;
+    background:linear-gradient(180deg,#292929 0%,#212121 100%);
+
     width: 95%;
     height: 90%;
+
     display: grid;
+
     position: absolute;
     top: 5%;
     left: 2.5%;
-    border-radius: 15px;    
+
+    border-radius: 15px;
+
+    transition:.2s ease;
+}
+
+.LoginButtonBG:hover .LoginButton{
+    background:linear-gradient(180deg,#2E2E2E 0%,#252525 100%);
 }
 
 .LoginButton h2 {
-    color: #e8e8e8;
-    font-size: 30px;
-    font-weight: 500;
+    color: #F2F2F2;
+    font-size: 24px;
+    font-weight: 600;
+
     position: absolute;
-    top: 5%;;
-    left: 23%;
-}   
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+
+    white-space: nowrap;
+}
+
 .HeaderBG #Logo {
     width: 100px;
     height: 100px;
+
     position: absolute;
     top: 12px;
     right: 20px;
+
+    border-radius:50%;
+    box-shadow: 0 6px 18px rgba(0,0,0,.35);
 }
+
+/*==================================================
+    SUBHEADER / NAVEGACION
+==================================================*/
 
 .SubHeaderBG {
     position: absolute;
     top: 120px;
     width: 100%;
     height: 75px;
-    background-color: #2e2e2e;
+
+    background:linear-gradient(180deg,#282828 0%,#212121 100%);
+    border-top:1px solid rgba(255,255,255,.05);
+    border-bottom:1px solid rgba(0,0,0,.4);
+
     display: grid;
     border-radius: 3px;
+
+    box-shadow: 0 8px 20px rgba(0,0,0,.25);
 }
 
 .Pages {
@@ -100,23 +154,27 @@ html{
     width: 180px;
     height: 100%;
 
-    font-size: 24px;
-    font-weight: 500;
+    font-size: 22px;
+    font-weight: 600;
+    letter-spacing:.2px;
 
     display: flex;
     justify-content: center;
     align-items: center;
 
-    color: #e8e8e8;
+    color: #B4B4B4;
     cursor: pointer;
     position: relative;
-    transition: background-color 0.2s ease;
+    transition: color 0.2s ease, background-color 0.2s ease;
 }
 
 .UnderLine {
     width: 100%;
     height: 5px;
-    background-color: #668eb9;
+
+    background:linear-gradient(90deg,#6C98CC,#4A78B0);
+    box-shadow: 0 0 12px rgba(108,152,204,.55);
+
     position: absolute;
     bottom: 0;
     left: 0;
@@ -131,15 +189,15 @@ html{
     width: 100%;
     height: 5px;
 
-    background-color: rgba(74, 144, 217, 0.20);
+    background: rgba(108,152,204,.22);
 
     transform: translateY(0);
     transition: all 0.25s ease;
 }
 
 .Pages h2:hover {
-    background-color: #2a2a2a;
-    color: #e8e8e8;
+    background-color: rgba(255,255,255,.03);
+    color: #F2F2F2;
 }
 
 .Pages h2:hover::after {
