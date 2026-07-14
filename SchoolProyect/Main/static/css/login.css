@@ -43,7 +43,7 @@ body{
     justify-content:center;
     align-items:center;
 
-    padding:40px;
+    padding:40px 20px;
 }
 
 /*==================================================
@@ -130,7 +130,7 @@ body{
 
     text-align:center;
 
-    font-size:34px;
+    font-size:clamp(26px, 5vw, 34px);
     line-height:1.2;
 
     font-family:Cambria, Georgia, serif;
@@ -339,4 +339,32 @@ body{
 .LoginFooter a:hover{
 
     text-decoration:underline;
+}
+
+/*==================================================
+    RESPONSIVE (aportado por tu compañero, adaptado
+    a las clases actuales del HTML)
+==================================================*/
+
+@media (max-width:600px){
+
+    .LoginCardBG{
+        width:100%;
+        max-width:560px;
+        min-height:auto;
+    }
+
+    .LoginCard{
+        height:auto;
+        padding:30px 22px;
+    }
+
+    .LoginCard input{
+        height:56px;
+        font-size:15px;
+    }
+
+    #LoginBtn{
+        height:54px;
+    }
 }
