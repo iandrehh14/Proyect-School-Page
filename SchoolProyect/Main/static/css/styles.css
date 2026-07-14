@@ -1,19 +1,3 @@
-html{
-    zoom: 100%;
-}
-
-@media (max-width:1600px){
-    html{
-        zoom: 90%;
-    }
-}
-
-@media (max-width:1400px){
-    html{
-        zoom: 80%;
-    }
-}
-
 * {
     margin: 0;
     padding: 0;
@@ -21,74 +5,76 @@ html{
     font-family: "Inter", "Segoe UI", sans-serif;
 }
 
+html {
+    -webkit-text-size-adjust: 100%;
+}
+
 .HeaderBG {
     width: 100%;
-    height: 125px;
     background-color: #1e1e1e;
-    display: grid;
     border-radius: 5px;
+    padding-bottom: 4px;
+}
+
+.HeaderTop {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    padding: 16px 24px;
 }
 
 .HeaderBG #SchoolName {
     color: #e8e8e8;
-    font-size: 42px;
+    font-size: clamp(22px, 3vw, 42px);
     font-weight: 700;
-    margin-left: 20px;
-    margin-top: -15px;
-    align-self: center;
+    flex: 1 1 auto;
+    min-width: 0;
 }
 
-.LoginButtonBG {
+.HeaderTop .LoginButtonBG {
     background-color: #668eb9;
-    width: 150px;
-    height: 60px;
-    position: absolute;
-    top: 30px;
-    right: 160px;
+    width: 130px;
+    height: 52px;
     border-radius: 15px;
+    flex-shrink: 0;
+    order: 3;
 }
 
 .LoginButton {
     background-color: #2e2e2e;
     width: 95%;
     height: 90%;
-    display: grid;
-    position: absolute;
-    top: 5%;
-    left: 2.5%;
-    border-radius: 15px;    
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 2.5% auto 0;
+    border-radius: 15px;
 }
 
 .LoginButton h2 {
     color: #e8e8e8;
-    font-size: 30px;
+    font-size: 20px;
     font-weight: 500;
-    position: absolute;
-    top: 5%;;
-    left: 23%;
-}   
-.HeaderBG #Logo {
-    width: 100px;
-    height: 100px;
-    position: absolute;
-    top: 12px;
-    right: 20px;
+}
+
+.HeaderTop #Logo {
+    width: 56px;
+    height: 56px;
+    flex-shrink: 0;
+    order: 2;
 }
 
 .SubHeaderBG {
-    position: absolute;
-    top: 120px;
     width: 100%;
-    height: 75px;
     background-color: #2e2e2e;
-    display: grid;
     border-radius: 3px;
 }
 
 .Pages {
     display: flex;
-    height: 100%;
-    text-decoration: none;
+    flex-wrap: wrap;
+    position: relative;
 }
 
 .Pages a {
@@ -97,15 +83,17 @@ html{
 
 .Pages h2 {
     text-decoration: none;
-    width: 180px;
-    height: 100%;
+    flex: 1 1 auto;
+    min-width: 120px;
+    padding: 14px 8px;
 
-    font-size: 24px;
+    font-size: clamp(14px, 1.6vw, 24px);
     font-weight: 500;
 
     display: flex;
     justify-content: center;
     align-items: center;
+    text-align: center;
 
     color: #e8e8e8;
     cursor: pointer;
@@ -117,9 +105,6 @@ html{
     width: 100%;
     height: 5px;
     background-color: #668eb9;
-    position: absolute;
-    bottom: 0;
-    left: 0;
 }
 
 .Pages h2::after {
@@ -143,5 +128,48 @@ html{
 }
 
 .Pages h2:hover::after {
-    height: 75px;
+    height: 100%;
+}
+
+@media (max-width: 700px) {
+    .HeaderTop {
+        flex-wrap: wrap;
+        justify-content: center;
+        text-align: center;
+        padding: 16px;
+    }
+
+    .HeaderBG #SchoolName {
+        order: 1;
+        flex: 1 1 100%;
+        text-align: center;
+    }
+
+    .HeaderTop #Logo {
+        order: 2;
+    }
+
+    .HeaderTop .LoginButtonBG {
+        order: 3;
+    }
+
+    .Pages h2 {
+        min-width: 90px;
+        font-size: 14px;
+        padding: 10px 4px;
+    }
+}
+
+@media (max-width: 480px) {
+    .Pages {
+        flex-direction: column;
+    }
+
+    .Pages h2 {
+        width: 100%;
+    }
+
+    .UnderLine {
+        display: none;
+    }
 }

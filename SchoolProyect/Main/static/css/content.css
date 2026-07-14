@@ -1,19 +1,3 @@
-html{
-    zoom: 100%;
-}
-
-@media (max-width:1600px){
-    html{
-        zoom: 90%;
-    }
-}
-
-@media (max-width:1400px){
-    html{
-        zoom: 80%;
-    }
-}
-
 * {
     margin: 0;
     padding: 0;
@@ -29,12 +13,11 @@ html{
     border-radius: 5px;
 
     display: grid;
-    grid-template-columns: 65% 30%;
+    grid-template-columns: minmax(0, 65fr) minmax(0, 30fr);
     gap: 20px;
 
-    padding: 100px 20px 80px 20px;
+    padding: 40px 20px 60px 20px;
 
-    /* 🔥 CLAVE */
     align-items: start;
 }
 
@@ -45,27 +28,27 @@ html{
     display: flex;
     flex-direction: column;
     gap: 20px;
+    min-width: 0;
 }
 #WelcomeText {
     color: #e8e8e8;
-    font-size: 32px;
+    font-size: clamp(22px, 2.6vw, 32px);
     font-weight: 500;
 }
 
 #DateText {
     color: #b4b4b4;
-    font-size: 18px;
+    font-size: clamp(14px, 1.6vw, 18px);
     font-weight: 400;
-    margin-top: -10px;
 }
 
 #NewsText {
     color: #b4b4b4;
-    font-size: 20px;
+    font-size: clamp(16px, 1.8vw, 20px);
     font-weight: 600;
     letter-spacing: 0.08em;
     text-transform: uppercase;
-    margin-top: 20px;
+    margin-top: 10px;
 }
 
 .CardNewsBG {
@@ -73,16 +56,15 @@ html{
     background-color: #2e2e2e;
     border-radius: 20px;
 
-    min-height: 40vh; 
+    min-height: 40vh;
     padding: 20px;
 
-    position: relative; 
+    position: relative;
 }
 
 .CardNewsBG #AccountLogo {
     width: 60px;
     height: 60px;
-    margin-top: 2px;
 }
 
 .CardNewsBG #TeacherUserName {
@@ -90,13 +72,13 @@ html{
     margin-top: -60px;
 
     color: #e8e8e8;
-    font-size: 22px;
+    font-size: clamp(17px, 1.8vw, 22px);
     font-weight: 500;
+    padding-right: 90px;
 }
 
 .CardNewsBG #TeacherSubject {
     margin-left: 70px;
-    
 
     color: #b4b4b4;
     font-size: 17px;
@@ -105,58 +87,47 @@ html{
 
 .CardNewsBG #DateMessage {
     position: absolute;
-    top: 30px;
+    top: 20px;
     right: 20px;
-    
 
     color: #b4b4b4;
-    font-size: 17px;
+    font-size: 14px;
 }
 
 .TypeMessageBG {
     margin-top: 30px;
+    display: inline-block;
 
-    width: 120px;
-    height: 30px;
+    padding: 4px 15px;
     background-color: #1e4268;
     border-radius: 10px;
 }
 
 .TypeMessageBG #TypeMessageText {
-    margin-left: 15px;
-    padding-top: 4px;
-
-
     color: #81b1e7;
     font-size: 16px;
     font-weight: 500;
+    white-space: nowrap;
 }
 
 .CardNewsBG #TitleMessageText {
     margin-top: 15px;
 
     color: #e8e8e8;
-    font-size: 28px;
+    font-size: clamp(20px, 2.2vw, 28px);
     font-weight: 500;
-    width: 70%;
+    width: 100%;
 }
 
 .CardNewsBG #ContentMessageText {
     margin-top: 10px;
 
     color: #b4b4b4;
-    font-size: 20px;
+    font-size: clamp(15px, 1.6vw, 20px);
     line-height: 1.7;
-    width: 70%;
+    width: 100%;
 }
 
-
-
-.RightColumn {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-}
 
 
 .CardScheduleBG,
@@ -164,8 +135,7 @@ html{
     width: 100%;
     background-color: #2e2e2e;
     border-radius: 20px;
-    padding: 30px;
-    margin-left: 50px;
+    padding: 24px;
 }
 
 
@@ -181,7 +151,7 @@ html{
 #ScheduleTitle,
 #NoticesTitle {
     color: #9a9a9a;
-    font-size: 20px;
+    font-size: clamp(16px, 1.6vw, 20px);
     font-weight: 600;
     letter-spacing: 0.08em;
     text-transform: uppercase;
@@ -197,7 +167,8 @@ html{
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 20px 0;
+    gap: 10px;
+    padding: 16px 0;
     border-bottom: 1px solid #3a3a3a;
 }
 
@@ -207,34 +178,35 @@ html{
 
 .ScheduleSubject {
     color: #e8e8e8;
-    font-size: 22px;
+    font-size: clamp(17px, 1.8vw, 22px);
     font-weight: 500;
 }
 
 .ScheduleRoom {
     color: #9a9a9a;
-    font-size: 17px;
+    font-size: 15px;
     font-weight: 400;
     margin-top: 6px;
 }
 
 .ScheduleTime {
     color: #9a9a9a;
-    font-size: 18px;
+    font-size: 16px;
     font-weight: 400;
+    flex-shrink: 0;
 }
 
 
 .NoticesList {
     display: flex;
     flex-direction: column;
-    gap: 24px;
+    gap: 20px;
 }
 
 .NoticeItem {
     display: flex;
     align-items: flex-start;
-    gap: 18px;
+    gap: 16px;
 }
 
 .NoticeDot {
@@ -248,21 +220,73 @@ html{
 
 .NoticeText {
     color: #b4b4b4;
-    font-size: 18px;
+    font-size: 16px;
     font-weight: 400;
     line-height: 1.7;
 }
 
-.GeniallyContainer{
-    margin-top: 70px;
-    width: 100%;
-    height: 900px;
+.GeniallyContainer {
+    margin-top: 30px;
+    margin-left: 20px;
+    margin-right: 20px;
+    width: calc(100% - 40px);
+    height: 80vh;
     border-radius: 20px;
     overflow: hidden;
 }
 
-.GeniallyContainer iframe{
+.GeniallyContainer iframe {
     width: 100%;
     height: 100%;
     border: none;
+}
+
+@media (max-width: 900px) {
+    .ContentBG {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 600px) {
+    .ContentBG {
+        padding: 24px 14px 40px 14px;
+    }
+
+    .CardNewsBG {
+        min-height: unset;
+    }
+
+    .CardNewsBG #TeacherUserName,
+    .CardNewsBG #TeacherSubject {
+        margin-left: 0;
+    }
+
+    .CardNewsBG #AccountLogo {
+        margin-bottom: 8px;
+        display: block;
+    }
+
+    .CardNewsBG #TeacherUserName {
+        margin-top: 0;
+        padding-right: 0;
+        display: block;
+    }
+
+    .CardNewsBG #DateMessage {
+        position: static;
+        display: block;
+        margin-top: 8px;
+    }
+
+    .CardScheduleBG,
+    .CardNoticesBG {
+        padding: 18px;
+    }
+
+    .GeniallyContainer {
+        margin-left: 10px;
+        margin-right: 10px;
+        width: calc(100% - 20px);
+        height: 60vh;
+    }
 }
